@@ -1,0 +1,14 @@
+{
+  "name": "poker-planning-server",
+  "version": "1.0.0",
+  "description": "A socket server for poker planning application",
+  "main": "index.js",
+  "author": "Guillaume LEROY",
+  "license": "MIT",
+  "dependencies": {
+    "@colyseus/monitor": "^0.1.7",
+    "colyseus": "^0.9.5",
+    "express": "^4.16.3",
+    "superagent": "^3.8.3"
+  }
+}
