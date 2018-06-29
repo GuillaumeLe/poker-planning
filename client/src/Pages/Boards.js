@@ -5,9 +5,28 @@ import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import Button from '@material-ui/core/Button';
 import filter from 'lodash/filter';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-
+const styles = {
+  root: {
+    color: 'white',
+  },
+  select: {
+    color: 'white',
+    marginTop: 10,
+  },
+  selectMenu: {
+    color: 'white'
+  },
+  icon: {
+    color: 'white'
+  },
+  selectWrapper: {
+    width: 200,
+    borderBottom: '1px solid white',
+  }
+}
 class Boards extends Component {
   constructor(props) {
     super(props);
@@ -35,17 +54,20 @@ class Boards extends Component {
   };
 
   render() {
+    const { classes } = this.props;
     return (
       <div className="boards">
         <Select
           value={this.state.selectedBoard}
           onChange={this.handleChange}
-          autoWidth={true}
+          style={styles.selectWrapper}
+          classes={classes}
         >
           {this.state.boards.map((board)=>(
             <MenuItem key={board.id} value={board.name}>{board.name}</MenuItem>
           ))}
         </Select>
+
         <Button 
           variant="contained"
           onClick={() => {
@@ -76,4 +98,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Boards);
+)(withStyles(styles)(Boards));

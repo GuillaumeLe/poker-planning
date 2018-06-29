@@ -51,7 +51,8 @@ class SimpleCard extends Component {
 
 SimpleCard.propTypes = {
   value: PropTypes.string.isRequired,
-  isVisible: PropTypes.bool.isRequired
+  isVisible: PropTypes.bool.isRequired,
+  from: PropTypes.string
 }
 
 export default SimpleCard
