@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "Guillaume LEROY",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "@colyseus/monitor": "^0.1.7",
     "colyseus": "^0.9.5",
