@@ -5,7 +5,7 @@ export function connectClient () {
   return (dispatch, getState) => {
     try {
       const { user: {username, fullName, selectedBoard} } = getState()
-      const client = new Client('ws://poker-planning-app.herokuapp.com:2657')
+      const client = new Client('ws://poker-planning-app.herokuapp.com')
       dispatch({type: types.SET_CLIENT, client: client})
       const room = client.join('poker', {
         username,
